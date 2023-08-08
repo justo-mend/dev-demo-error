@@ -2,5 +2,28 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base"
+  ],
+  "packageRules": [
+    
+    {
+      "groupName": "major",
+      "matchUpdateTypes": ["major"]
+    },
+    {
+      "groupName": "minor and patch",
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    
+    {
+      "groupName": "major - high confidence",
+      "matchUpdateTypes": ["major"],
+      "matchConfidence": ["high", "very high"],
+    },
+    {
+      "groupName": "minor and patch - high confidence",
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchConfidence": ["high", "very high"],
+    },
+    
   ]
 }
